@@ -1,0 +1,98 @@
+.hero {
+  min-height: 100vh;
+  padding-top: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.hero-visuals-3d {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 800px;
+  height: 80vh;
+  z-index: 5;
+  pointer-events: auto; /* Ensure we can drag/rotate the 3D canvas */
+}
+
+/* Elevate huge text z-index so it stays readable on top if needed */
+.hero-huge-text {
+  font-size: 11vw;
+  line-height: 0.85;
+  white-space: nowrap;
+  letter-spacing: -3px;
+  z-index: 10;
+  position: relative;
+  mix-blend-mode: exclusion;
+  color: #fff;
+  pointer-events: none; /* Let mouse through text to rotate model */
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin-top: 40px;
+  font-size: 16px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.scroll-indicator-premium {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--text-muted);
+  z-index: 15;
+}
+
+.mouse-icon {
+  width: 22px;
+  height: 36px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.wheel {
+  width: 3px;
+  height: 6px;
+  background: var(--accent-blue); /* This maps to the new Gold */
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--accent-blue-glow);
+}
+
+@media (max-width: 1024px) {
+  .hero-huge-text {
+    font-size: 14vw;
+  }
+  .hero-bento-img {
+    width: 100%;
+    top: 50px;
+  }
+}

@@ -1,0 +1,112 @@
+.header-wrapper {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.header-pill {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  pointer-events: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-pill.scrolled {
+  padding: 8px 24px;
+  background-color: rgba(10, 10, 10, 0.7);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.logo-pill {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-pill a {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-accent {
+  color: var(--accent-blue);
+  margin-left: 2px;
+}
+
+.nav-links-pill {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links-pill a {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.nav-links-pill a:hover {
+  color: var(--text-main);
+}
+
+.nav-links-pill a.active {
+  color: var(--text-main);
+}
+
+.nav-links-pill a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--accent-blue); /* Gold glowing dot */
+  box-shadow: 0 0 8px var(--accent-blue-glow);
+}
+
+.pill-contact-btn {
+  background-color: var(--text-main);
+  color: var(--bg-color);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.pill-contact-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .nav-links-pill {
+    display: none;
+  }
+}

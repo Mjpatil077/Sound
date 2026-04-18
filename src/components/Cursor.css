@@ -1,0 +1,26 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  pointer-events: none;
+  z-index: 10000;
+  box-shadow: 0 0 30px var(--accent-blue), 0 0 60px var(--accent-blue-glow);
+  mix-blend-mode: screen; /* Makes the gold glow interact beautifully with dark background */
+}
+
+/* Hide default cursor on desktop since we have a custom one */
+@media (min-width: 1025px) {
+  * {
+    cursor: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .custom-cursor {
+    display: none;
+  }
+}
