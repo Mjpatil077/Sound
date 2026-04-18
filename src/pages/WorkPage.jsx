@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import './PagesResponsive.css';
 
 const ParallaxImage = ({ src, title, client }) => {
   const ref = useRef(null);
@@ -32,6 +33,7 @@ const WorkPage = () => {
     <div style={{ backgroundColor: '#000', minHeight: '100vh' }}>
       <div className="container" style={{ paddingTop: '150px', paddingBottom: '60px' }}>
         <motion.h1 
+          className="resp-work-title"
           initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}
           style={{ fontSize: '6vw', fontFamily: 'Syne', fontWeight: 800, lineHeight: 0.9, margin: 0, letterSpacing: '-2px' }}
         >

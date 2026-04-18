@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import './PagesResponsive.css';
 
 const StudioPage = () => {
   return (
@@ -11,9 +12,9 @@ const StudioPage = () => {
           PHILOSOPHY
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', position: 'relative', zIndex: 10, marginTop: '10vh' }}>
+        <div className="resp-studio-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', position: 'relative', zIndex: 10, marginTop: '10vh' }}>
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-            <h1 style={{ fontSize: '80px', fontFamily: 'Syne', lineHeight: 0.9, marginBottom: '50px' }}>
+            <h1 className="resp-studio-title" style={{ fontSize: '80px', fontFamily: 'Syne', lineHeight: 0.9, marginBottom: '50px' }}>
               WE SHAPE <br/><span style={{ color: 'var(--accent-blue)' }}>SILENCE.</span>
             </h1>
             <p style={{ fontSize: '18px', color: '#aaa', lineHeight: 1.8, marginBottom: '30px' }}>
@@ -26,6 +27,7 @@ const StudioPage = () => {
 
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }}>
             <img 
+              className="resp-studio-img"
               src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=800" 
               alt="Studio" 
               style={{ width: '100%', height: '600px', objectFit: 'cover', borderRadius: '24px', filter: 'grayscale(0.8)' }}
@@ -34,6 +36,7 @@ const StudioPage = () => {
         </div>
 
         <motion.div 
+          className="resp-studio-stats"
           initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }}
           style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px', marginTop: '150px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '80px' }}
         >

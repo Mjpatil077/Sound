@@ -116,6 +116,12 @@
 }
 
 @media (max-width: 768px) {
+  .footer-brand h2 {
+    font-size: 28px !important;
+  }
+  .marquee-text {
+    font-size: 36px !important;
+  }
   .footer-links {
     flex-direction: column;
     gap: 40px;

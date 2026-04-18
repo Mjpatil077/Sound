@@ -102,3 +102,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 0px; 
   /* Hidden scrollbar since lenis handles smooth scrolling beautifully */
 }
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+}

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link, NavLink } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,16 +30,22 @@ const Header = () => {
           </Link>
         </div>
         
-        <nav className="nav-links-pill">
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/store">Store</NavLink>
-          <NavLink to="/work">Work</NavLink>
-          <NavLink to="/studio">Studio</NavLink>
+        <nav className={`nav-links-pill ${menuOpen ? 'open' : ''}`}>
+          <NavLink to="/services" onClick={() => setMenuOpen(false)}>Services</NavLink>
+          <NavLink to="/store" onClick={() => setMenuOpen(false)}>Store</NavLink>
+          <NavLink to="/work" onClick={() => setMenuOpen(false)}>Work</NavLink>
+          <NavLink to="/studio" onClick={() => setMenuOpen(false)}>Studio</NavLink>
+          <Link to="/contact" onClick={() => setMenuOpen(false)} className="mobile-only-contact">Let's Talk</Link>
         </nav>
 
-        <Link to="/contact" className="pill-contact-btn">
-          Let's Talk
-        </Link>
+        <div className="mobile-actions">
+          <Link to="/contact" className="pill-contact-btn desktop-only">
+            Let's Talk
+          </Link>
+          <button className="hamburger-btn" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </motion.div>
     </div>
   );

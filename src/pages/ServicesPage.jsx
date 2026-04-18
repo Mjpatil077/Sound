@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import './PagesResponsive.css';
 
 const ServicesPage = () => {
   return (
@@ -12,7 +13,7 @@ const ServicesPage = () => {
           transition={{ duration: 1 }}
           style={{ marginBottom: '100px' }}
         >
-          <h1 style={{ fontSize: '8vw', fontFamily: 'Syne', fontWeight: 800, lineHeight: 0.9, letterSpacing: '-2px' }}>
+          <h1 className="resp-services-header" style={{ fontSize: '8vw', fontFamily: 'Syne', fontWeight: 800, lineHeight: 0.9, letterSpacing: '-2px' }}>
             ACOUSTIC <br /> SERVICES.
           </h1>
           <p style={{ marginTop: '30px', maxWidth: '600px', fontSize: '18px', color: '#888', lineHeight: 1.6 }}>
@@ -28,13 +29,14 @@ const ServicesPage = () => {
           ].map((item, i) => (
             <motion.div
               key={i}
+              className="resp-services-row"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.8, delay: i * 0.2 }}
               style={{ padding: '60px', backgroundColor: '#0a0a0a', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '24px', display: 'flex', alignItems: 'flex-start', gap: '40px' }}
             >
-              <h2 style={{ fontFamily: 'Syne', fontSize: '64px', color: 'var(--accent-blue)', opacity: 0.8, marginTop: '-10px' }}>{item.tag}</h2>
+              <h2 className="resp-services-num" style={{ fontFamily: 'Syne', fontSize: '64px', color: 'var(--accent-blue)', opacity: 0.8, marginTop: '-10px' }}>{item.tag}</h2>
               <div>
                 <h3 style={{ fontSize: '32px', marginBottom: '16px', fontFamily: 'Syne' }}>{item.title}</h3>
                 <p style={{ color: '#aaa', maxWidth: '800px', fontSize: '16px', lineHeight: 1.6 }}>{item.desc}</p>

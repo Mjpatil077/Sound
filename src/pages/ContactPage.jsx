@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import './PagesResponsive.css';
 
 const ContactPage = () => {
   return (
@@ -7,6 +8,7 @@ const ContactPage = () => {
       <div className="container" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
         
         <motion.div 
+          className="resp-contact-box"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -20,7 +22,7 @@ const ContactPage = () => {
             padding: '60px'
           }}
         >
-          <h1 style={{ fontFamily: 'Syne', fontSize: '48px', marginBottom: '10px', textAlign: 'center' }}>LET'S TALK.</h1>
+          <h1 className="resp-contact-title" style={{ fontFamily: 'Syne', fontSize: '48px', marginBottom: '10px', textAlign: 'center' }}>LET'S TALK.</h1>
           <p style={{ color: '#888', textAlign: 'center', marginBottom: '50px' }}>Inquire about bespoke panels, studio framing, or raw materials.</p>
 
           <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>

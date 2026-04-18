@@ -124,6 +124,9 @@
 }
 
 @media (max-width: 1024px) {
+  .services-header h2 {
+    font-size: 40px !important;
+  }
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -138,5 +141,22 @@
     grid-column: span 1 !important;
     grid-row: span 1 !important;
     min-height: 250px;
+  }
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .services-header p {
+    text-align: left;
+  }
+  .bento-title {
+    font-size: 20px !important;
+  }
+  .bento-card:nth-child(1) .bento-title {
+    font-size: 24px !important;
+  }
+  .bento-desc {
+    font-size: 14px;
   }
 }

@@ -88,8 +88,15 @@
 }
 
 @media (max-width: 1024px) {
+  .hero-visuals-3d {
+    pointer-events: none !important; /* Ensure it never blocks scroll */
+    /* Removed the scale(0.5) so sheets stay big and beautiful */
+  }
   .hero-huge-text {
-    font-size: 14vw;
+    font-size: 40px !important; /* Hard size to prevent bounds breaking completely */
+    line-height: 1;
+    word-wrap: break-word;
+    letter-spacing: -1px;
   }
   .hero-bento-img {
     width: 100%;

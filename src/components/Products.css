@@ -111,8 +111,16 @@
 }
 
 @media (max-width: 1024px) {
+  .products-title-wrapper h2 {
+    font-size: 40px !important;
+    word-wrap: break-word;
+  }
   .products-bento {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .product-bento-img {
+    /* Mobile devices cannot hover, so we default to the bright, fully visible state! */
+    filter: grayscale(0) brightness(0.8);
   }
 }
 
@@ -121,6 +129,11 @@
     grid-template-columns: 1fr;
   }
   .product-bento-card {
-    height: 400px;
+    height: 350px; /* Reduced height so users don't have to scroll as far */
+  }
+  .product-bento-info h3 {
+    font-size: 20px !important; /* Reduced dramatically */
+    word-wrap: break-word;
+    line-height: 1.2;
   }
 }

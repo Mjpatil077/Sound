@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import './PagesResponsive.css';
 
 // Pulling TiltCard mechanics from Products component for reusability on Store Page
 const TiltCard = ({ children }) => {
@@ -24,6 +25,7 @@ const TiltCard = ({ children }) => {
       onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className="tilt-wrapper"
+      whileTap={{ scale: 0.95 }}
     >
       {children}
     </motion.div>
@@ -48,11 +50,11 @@ const StorePage = () => {
     <div style={{ paddingTop: '150px', paddingBottom: '150px', minHeight: '100vh', backgroundColor: '#000' }}>
       <div className="container">
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '60px' }}>
-          <h1 style={{ fontSize: '6vw', fontFamily: 'Syne', fontWeight: 800, margin: 0, lineHeight: 0.9 }}>
+        <div className="resp-store-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '60px' }}>
+          <h1 className="resp-store-title" style={{ fontSize: '6vw', fontFamily: 'Syne', fontWeight: 800, margin: 0, lineHeight: 0.9 }}>
             THE <br /> STUDIO STORE
           </h1>
-          <div style={{ display: 'flex', gap: '15px' }}>
+          <div className="resp-store-filters" style={{ display: 'flex', gap: '15px' }}>
             {['All', 'Panels', 'Isolation', 'Diffusion'].map(btn => (
               <button 
                 key={btn}

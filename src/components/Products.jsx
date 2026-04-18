@@ -55,6 +55,7 @@ const TiltCard = ({ children }) => {
     <motion.div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      whileTap={{ scale: 0.95 }}
       style={{
         rotateX,
         rotateY,
